@@ -108,8 +108,10 @@ internal struct INITokenizer {
     }
 
     // These sets are made available for use by the writer
-    internal static let identifier = CharacterSet.alphanumerics.union(CharacterSet(charactersIn: "_-")), notIdentifier = identifier.inverted
-    internal static let whitespace = CharacterSet.whitespaces, notWhitespace = whitespace.inverted
+    internal static let identifier = CharacterSet.alphanumerics.union(CharacterSet(charactersIn: "_-"))
+    internal static let notIdentifier = CharacterSet.alphanumerics.union(CharacterSet(charactersIn: "_-")).inverted
+    internal static let whitespace = CharacterSet.whitespaces
+    internal static let notWhitespace = CharacterSet.whitespaces.inverted
     internal static let newline = CharacterSet.newlines
     internal static let doubleQuoteStops = CharacterSet(charactersIn: "\"\\").union(CharacterSet.newlines)
     internal static let singleQuoteStops = CharacterSet(charactersIn: "'\\").union(CharacterSet.newlines)
